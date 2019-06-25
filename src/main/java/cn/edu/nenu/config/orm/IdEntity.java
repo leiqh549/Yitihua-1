@@ -1,6 +1,9 @@
 package cn.edu.nenu.config.orm;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * 统一定义id的entity基类
@@ -16,7 +19,6 @@ public abstract class IdEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",length = 128,nullable = false,unique=true)
     protected Long id;
 
     public Long getId() {
