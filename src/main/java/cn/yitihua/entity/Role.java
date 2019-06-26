@@ -1,4 +1,4 @@
-package cn.yitihua.entity;
+﻿package cn.yitihua.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -22,7 +22,7 @@ public class Role {
     @Column(name = "isDeleted")
     private int isDeleted;
 
-    //多对多关系 生成T_USER_ROLE中间表,双向主导
+    // 多对多关系 生成T_USER_ROLE中间表,双向主导
     @ManyToMany
     @JoinTable(name = "T_USER_ROLE",
             //与此表相连接的为user_id,与ROLE表相连的为role_id;
@@ -34,7 +34,7 @@ public class Role {
     //多对多关系 生成T_Role_Permission中间表,双向主导
     @ManyToMany
     @JoinTable(name = "T_Role_Permission",
-            //与此表相连接的为role_id,与ROLE相连的为permission_id;
+            //与此表相连接的为role_id, 与ROLE相连的为permission_id;
             joinColumns = { @JoinColumn(name = "role_id") },
             inverseJoinColumns = { @JoinColumn(name = "permission_id") })
     // 多对多关联中Permission对象的集合
