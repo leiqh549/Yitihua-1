@@ -34,6 +34,7 @@
         <!-- shiro URL控制过滤器规则  -->
         <property name="filterChainDefinitions">
             <value>
+                /index* = anon
                 <!--默认过滤器-->
                 <!--
                      1.anon 可以被匿名访问
