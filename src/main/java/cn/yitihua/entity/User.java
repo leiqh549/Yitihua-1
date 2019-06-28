@@ -1,9 +1,6 @@
 package cn.yitihua.entity;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 //六个字段 id name salt password isDisabled isDeleted
 
@@ -30,14 +27,43 @@ public class User {
     @Column(name = "isDeleted")
     private int getIsDisabled;
 
-    //多对多关系 生成T_USER_ROLE中间表,双向主导
     @ManyToMany
     @JoinTable(name = "T_USER_ROLE",
-            //与此表相连接的为user_id,与ROLE表相连的为role_id;
             joinColumns = { @JoinColumn(name = "user_id") },
             inverseJoinColumns = { @JoinColumn(name = "role_id") })
     // 多对多关联中Role对象的集合
     private Set<Role> roles = new HashSet<>();
+
+    //通过roles集合得到所有roles的permission
+    public  Set<String> getPermissionaByRoles(){
+        Set<String> permissionsByRoleSet =new HashSet<String>();
+        Set<String> permissionsByRole =new HashSet<String>();
+        Iterator<Role> it1 = roles.iterator();
+        Iterator<String> it2;
+        while (it1.hasNext()){
+            Role role=it1.next();
+            permissionsByRole=role.permissionSet();
+          //遍历并添加到permissionsByRoleSet集合中
+            it2=permissionsByRole.iterator();
+            while(it2.hasNext()){
+                permissionsByRoleSet.add(it2.next());
+            }
+        }
+        return permissionsByRoleSet;
+    }
+
+    //得到关联的Role对象的String
+    public Set<String> roleSet(){
+        Set<String> roleSet=new HashSet<String>();
+        Iterator<Role> it = roles.iterator();
+        while (it.hasNext()) {
+            Role role = it.next();
+         //Long型转成String类型
+            roleSet.add(String.valueOf(role.getId()));
+        }
+        return roleSet;
+    }
+
 
     public long getId() {
         return id;
