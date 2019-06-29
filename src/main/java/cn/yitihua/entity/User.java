@@ -15,6 +15,9 @@ public class User {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "realname")
+    private String realname;
+
     @Column(name = "salt")
     private String salt;
 
@@ -59,11 +62,17 @@ public class User {
         while (it.hasNext()) {
             Role role = it.next();
          //Long型转成String类型
-            roleSet.add(String.valueOf(role.getId()));
+            roleSet.add(role.getName());
         }
         return roleSet;
     }
 
+    /*
+    * 一对多
+    * */
+    @OneToMany(fetch=FetchType.LAZY,cascade={CascadeType.MERGE,CascadeType.REMOVE})
+    @JoinColumn(name="creator_id")
+    private List<Declare> addresses = new ArrayList<Declare>();
 
     public long getId() {
         return id;
@@ -111,5 +120,19 @@ public class User {
 
     public void setGetIsDisabled(int getIsDisabled) {
         this.getIsDisabled = getIsDisabled;
+    }
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
