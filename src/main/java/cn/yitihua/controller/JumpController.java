@@ -2,6 +2,7 @@ package cn.yitihua.controller;
 
 import cn.yitihua.entity.Declare;
 import cn.yitihua.service.DeclareService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
@@ -10,23 +11,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.jws.WebParam;
 import java.util.List;
 
 @Controller
-public class IndexController {
+@RequestMapping("/jump")
+/*
+* 用来处理界面间跳转(除首界面到子界面的跳转路径)
+* */
+public class JumpController {
 
     @Autowired
     private DeclareService declareService;
-    /*
-    * 根据角色控制访问路径
-    * */
+
     @RequestMapping("/index")
-        public String list1(Model model){
+    public String jumpIndex1(Model model){
         Subject subject = SecurityUtils.getSubject();
         String jumpPage="";
         /*
-         * 根据角色返回首页
-         * */
+        * 根据角色返回首页
+        * */
         if(subject.hasRole("OrdinaryAunt")){
             model.addAttribute("role","普通阿姨");
             jumpPage="ordinaryAuntIndex";
@@ -38,10 +42,18 @@ public class IndexController {
         System.out.println("indexController.class");
         return jumpPage;
     }
+    @RequestMapping("/jumpGongGao")
+    public String jumpGongGao(){
+        return "viewPage/myDeclare";
+    }
 
-//    /*无权限跳转路径*/
-//    @RequestMapping("/invalid")
-//    public String invalid(){
-//        return "viewPage/inValid";
-//    }
+    @RequestMapping("/jumpallDeclareList")
+    public String jumpallDeclareList(Model model){
+     //分页显示数据库第一页数据
+        //较冗余,有待封装
+        List<Declare> listPageOne=declareService.findDeclareByPage(0,5);
+        model.addAttribute("listByPage",listPageOne);
+        return "viewPage/allDeclareList";
+    }
+
 }
