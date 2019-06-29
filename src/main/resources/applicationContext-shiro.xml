@@ -20,21 +20,24 @@
         <!--		<property name="cacheManager" ref="shiroEhcacheManager" />-->
     </bean>
 
+
     <!-- 配置Shiro核心Filter  -->
     <bean id="shiroFilter"
           class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!-- 安全管理器 -->
         <property name="securityManager" ref="securityManager" />
-        <!-- 未认证，跳转到哪个页面  -->
-        <property name="loginUrl" value="/login.html" />
+        <!-- 未认证，跳转到哪个页面
+             如果请求的url与loginUrl所标注的url不同,则同样会产生登录拦截
+         -->
+        <property name="loginUrl" value="/login" />
         <!-- 登录页面页面 -->
-        <property name="successUrl" value="/index.html" />
+        <!--上网查找得:successUrl是一个附加配置,只有在session中无相关地址时才会跳转successUrl-->
+        <property name="successUrl" value="/index" />
         <!-- 认证后，没有权限跳转页面 -->
-        <property name="unauthorizedUrl" value="/unauthorized.html" />
+        <property name="unauthorizedUrl" value="/login" />
         <!-- shiro URL控制过滤器规则  -->
         <property name="filterChainDefinitions">
             <value>
-                /index* = anon
                 <!--默认过滤器-->
                 <!--
                      1.anon 可以被匿名访问
@@ -42,28 +45,56 @@
                      3.logout登出
                      4.roles角色过滤器
                 -->
-                /login.html* = anon
+                <!--登录认证-->
+                /staticResources/**/** = anon
+                /login= authc
+                /loginout=logout
+                <!--对权限路径进行拦截-->
+                /declare=resourceCheckFilter
+                /role=resourceCheckFilter
+                /favicon.ico = anon
+                /**= user
             </value>
+
         </property>
+    </bean>
+
+    <!-- 声明一个自定义的过滤器 -->
+    <bean id="resourceCheckFilter" class="cn.yitihua.filter.ResourceCheckFilter">
+        <!-- 为上面声明的自定义过滤器注入属性值 -->
+        <property name="errorUrl" value="/invalid"/>
+    </bean>
+
+
+    <!--凭证匹配器-->
+    <!--用来在登录时按如下的规则加密password与salt,并与数据库中密文比对-->
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <property name="hashAlgorithmName" value="md5"/>
+        <property name="hashIterations" value="1" />
     </bean>
 
     <!-- 自定义配置Realm -->
     <bean id="myRealm" class="cn.yitihua.realm.MyRealm" >
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+
+        <!--经测试,有filter足够达到url认证-->
+        <!--&lt;!&ndash; 自定义一个权限匹配器 &ndash;&gt;-->
+        <!--<bean id="permissionResolver" class="cn.yitihua.permission.UrlPermissionResolver"/>-->
+        <!--&lt;!&ndash; 将自定义的权限匹配器注入到自定义 Realm 中 &ndash;&gt;-->
+        <!--<property name="permissionResolver" ref="permissionResolver"/>-->
+
+        <!-- 配置缓存相关 -->
+        <!-- 启用缓存 -->
+        <property name="cachingEnabled" value="true"/>
+        <!-- 开启认证缓存-->
+        <property name="authenticationCachingEnabled" value="true"/>
+        <!-- 指定认证缓存的名字(与 ehcache.xml 中声明的相同) -->
+        <property name="authenticationCacheName" value="shiro-authenticationCache"/>
+        <!--开启授权缓存-->
+        <property name="authorizationCachingEnabled" value="true"/>
+        <!-- 指定授权缓存的名字(与 ehcache.xml 中声明的相同) -->
+        <property name="authorizationCacheName" value="shiro-authorizationCache"/>
     </bean>
 
-    <!--循环-->
-    <bean id="lifecycleBeanPostProcessor"
-          class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
-
-    <!-- 开启shiro注解模式  -->
-    <bean
-            class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
-            depends-on="lifecycleBeanPostProcessor" >
-        <property name="proxyTargetClass" value="true" />
-    </bean>
-
-    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-        <property name="securityManager" ref="securityManager"/>
-    </bean>
 
 </beans>
