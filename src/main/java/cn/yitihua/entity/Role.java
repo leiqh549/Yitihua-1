@@ -1,7 +1,8 @@
-﻿package cn.yitihua.entity;
+package cn.yitihua.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 //四个字段 id name description isDeleted
@@ -22,7 +23,7 @@ public class Role {
     @Column(name = "isDeleted")
     private int isDeleted;
 
-    // 多对多关系 生成T_USER_ROLE中间表,双向主导
+    //多对多关系 生成T_USER_ROLE中间表,双向主导
     @ManyToMany
     @JoinTable(name = "T_USER_ROLE",
             //与此表相连接的为user_id,与ROLE表相连的为role_id;
@@ -34,11 +35,27 @@ public class Role {
     //多对多关系 生成T_Role_Permission中间表,双向主导
     @ManyToMany
     @JoinTable(name = "T_Role_Permission",
-            //与此表相连接的为role_id, 与ROLE相连的为permission_id;
+            //与此表相连接的为role_id,与ROLE相连的为permission_id;
             joinColumns = { @JoinColumn(name = "role_id") },
             inverseJoinColumns = { @JoinColumn(name = "permission_id") })
     // 多对多关联中Permission对象的集合
     private Set<Permission> permissions  = new HashSet<>();
+   //定义获取role对应Permissions的方法
+    public Set<Permission> getPermissions() {
+        return permissions;
+    }
+
+    //得到关联的Permission对象的String
+    public Set<String> permissionSet(){
+        Set<String> permissionSet=new HashSet<String>();
+        Iterator<Permission> it = permissions.iterator();
+        while (it.hasNext()) {
+            Permission permission = it.next();
+            permissionSet.add(permission.getPermission());
+    }
+        return permissionSet;
+    }
+
 
     public long getId() {
         return id;

@@ -1,4 +1,4 @@
-# Yitihua
+﻿# Yitihua
 
 ## 一、项目说明
 
@@ -29,5 +29,6 @@
 
 ## 四、小组成员信息
 
-1. 雷启航 2016012014	github账号名：leiqh549
-2. 许征航 1016012096    github账号名：ShadowGhostH
+1. 雷启航 2016012014    github账号名：leiqh549
+2. 许征航 2016012096    github账号名：ShadowGhostH
+3. 肖尧  2016012065      github账号名：2016012065xiaoyao
