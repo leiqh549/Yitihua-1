@@ -12,8 +12,9 @@
   - 账号:xiaoy006 密码:123456
 
   - 账号:zhaosf007 密码:123456
-2. 数据库连接说明：只需将application.properties中的账号密码更改即可
-
+2. 数据库连接说明：
+   1.将application.properties中的账号密码更改即可
+   2.将yitihua.sql文件导入数据库
 ## 二、功能模块
 1. 登录模块
 2. 权限模块
