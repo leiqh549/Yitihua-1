@@ -3,23 +3,26 @@
 <%@ page import="org.apache.shiro.authc.LockedAccountException" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>登录</title>
 
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/login.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/font-awesome.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/reset.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/common.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/core.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/header.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/font-awesome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/reset.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/common.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/core.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/header.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
 </head>
 
 <body class="login-background">
@@ -107,8 +110,8 @@
 <%--    <hr>--%>
 <%--    <a href="${ctx}/index">首页</a> | <a href="${ctx}/dict">数据字典</a>--%>
 <%--</div>--%>
-<script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="${ctx}/static/js/bootstrap-paginator.js"></script>
-    <script src="${ctx}/static/js/bootstrap.dialog.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="${ctx}/staticResources/js/bootstrap-paginator.js"></script>
+    <script src="${ctx}/staticResources/js/bootstrap.dialog.js"></script>
 </body>
 </html>

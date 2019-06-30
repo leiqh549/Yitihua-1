@@ -9,27 +9,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/login.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/font-awesome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/font-awesome.css"/>
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/reset.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/common.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/core.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/header.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/reset.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/common.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/core.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/header.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 
 <div class="row">
     <div class="col-sm-12">
-        <nav class="navbar navbar-default navbar-static-top admin-nav J_admin_nav">
+        <nav class="navbar navbar-default navbar-staticResources-top admin-nav J_admin_nav">
             <a class="left-toggle pull-left" href="javascript:;">
                 <i class="fa fa-bars fa-lg"></i>
             </a>
@@ -48,7 +48,7 @@
 <!-- 侧边栏 -->
 <ul class="nav nav-pills nav-stacked sidebar pull-left">
     <li id="firstMenu0" class="active">
-        <a class="J_firstMenu" href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
+        <a class="J_firstMenu" href="/jump/index"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
     </li>
     <li id="firstMenu1" class="active">
         <a class="J_firstMenu" href="javascript:;"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>人员管理</span><i class="fa fa-angle-right angle-right"></i></a>
@@ -80,7 +80,7 @@
                 <div class="col-sm-12">
                     <ol class="breadcrumb">
                         <li>
-                            <a href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;首页</a>
+                            <a href="/jump/index"><i class="fa fa-home"></i>&nbsp;首页</a>
                         </li>
                         <li class="active">管理阿姨信息管理列表</li>
                     </ol>
@@ -172,11 +172,11 @@
         </div>
     </footer>
 
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/header.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/common.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/admin-information-management.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/header.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/common.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/admin-information-management.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
 </body>
 </html>

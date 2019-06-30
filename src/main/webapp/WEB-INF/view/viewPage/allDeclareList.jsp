@@ -9,27 +9,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/login.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/font-awesome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/font-awesome.css"/>
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/reset.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/common.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/core.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/header.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/reset.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/common.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/core.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/header.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 
 <div class="row">
     <div class="col-sm-12">
-        <nav class="navbar navbar-default navbar-static-top admin-nav J_admin_nav">
+        <nav class="navbar navbar-default navbar-staticResources-top admin-nav J_admin_nav">
             <a class="left-toggle pull-left" href="javascript:;">
                 <i class="fa fa-bars fa-lg"></i>
             </a>
@@ -48,7 +48,7 @@
 <!-- 侧边栏 -->
 <ul class="nav nav-pills nav-stacked sidebar pull-left">
     <li id="firstMenu0" class="active">
-        <a class="J_firstMenu" href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
+        <a class="J_firstMenu" href="/jump/index"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
     </li>
     <li id="firstMenu1" class="active">
         <a class="J_firstMenu" href="javascript:;"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>人员管理</span><i class="fa fa-angle-right angle-right"></i></a>
@@ -80,11 +80,11 @@
                 <div class="col-sm-12">
                     <ol class="breadcrumb">
                         <li>
-                            <a href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;首页</a>
+                            <a href="/jump/index"><i class="fa fa-home"></i>&nbsp;首页</a>
                         </li>
-                        <li>
-                            <a href="../story-manage/story-list-manage.html">公告管理</a>
-                        </li>
+                        <%--<li>--%>
+                            <%--<a href="/jump/jumpGongGao">我的公告</a>--%>
+                        <%--</li>--%>
                         <li class="active">公告列表</li>
                     </ol>
                     <input type="hidden" class="pageDataCount" value="10">
@@ -94,18 +94,16 @@
                                 <h4>公告列表</h4>
                             </div>
                             <div class="panel-body">
-                                <form class="form-horizontal J_searchForm">
+                                <form class="form-horizontal J_searchForm " action="/declare/queryByLike">
                                     <div class="form-group">
                                         <label class="padding-left-30 control-label">公告名</label>
                                         <div class="col-sm-2">
-                                            <input class="form-control J_username" name="username"></input>
+                                            <input class="form-control J_username" name="title"></input>
                                         </div>
-
-
                                     </div>
                                     <div class="col-sm-12 margin-bottom-10 margin-top--10 pull-right">
-                                        <a class="btn btn-success btn-radius-no J_search margin-left-15 pull-right" type="button"><i class="fa fa-search"></i>&nbsp;搜索</a>
-
+                                        <a class="btn btn-success btn-radius-no J_search margin-left-15 pull-right" href="/declare/returnAddDeclarePage"><i class="fa fa-search"></i>&nbsp;发布公告</a>
+                                        <input class="btn btn-success btn-radius-no J_search margin-left-15 pull-right" type="submit"><i class="fa fa-search"></i>&nbsp;</input>
                                     </div>
                                 </form>
                                 <div class="table-responsive col-sm-12">
@@ -113,42 +111,41 @@
                                         <thead>
                                         <tr>
 
-
                                             <th>标题</th>
                                             <th>上传人</th>
                                             <th>发布时间</th>
                                             <th>详情</th>
-
                                         </tr>
                                         </thead>
-                                        <tbody id="J_template">
-                                        <tr>
-                                            <td>今天自习室该打扫了</td>
-                                            <td>张阿姨</td>
-                                            <td>12/3</td>
-                                            <td>
-                                                <!-- <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;编辑</a> -->
-                                                <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;点击查看详情</a>
-                                                <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;下载此公告</a>
 
-                                            </td>
-                                        </tr>
+                                        <c:forEach var="declare" items="${listByPage}">
+                                            <tbody id="J_template">
+                                            <tr>
+                                                <td>${declare.title}</td>
+                                                <td>${declare.user.getRealname()}</td>
+                                                <td>${declare.created_time}</td>
+                                                <td>
+                                                    <!-- <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;编辑</a> -->
+                                                    <a href="/declare//declareDetails?id=${declare.id}" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;点击查看详情</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </c:forEach>
 
-                                        </tbody>
                                     </table>
                                     <div class="pull-right">
                                         <nav aria-label="Page navigation">
-                                            <ul class="pagination" id="pageLimit">
+                                             <ul class="pagination" id="pageLimit">
                                                 <li>
                                                     <a href="#" aria-label="Previous">
                                                         <span aria-hidden="true">&laquo;</span>
                                                     </a>
                                                 </li>
-                                                <li class="active"><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#">4</a></li>
-                                                <li><a href="#">5</a></li>
+                                                <li class="active"><a href="/declare/showDeclareByPage?page=1">1</a></li>
+                                                <li><a class="active" href="/declare/showDeclareByPage?page=2">2</a></li>
+                                                <li><a class="active" href="/declare/showDeclareByPage?page=3">3</a></li>
+                                                <li><a class="active" href="/declare/showDeclareByPage?page=4">4</a></li>
+                                                <li><a class="active" href="/declare/showDeclareByPage?page=5">5</a></li>
                                                 <li>
                                                     <a href="#" aria-label="Next">
                                                         <span aria-hidden="true">&raquo;</span>
@@ -175,11 +172,11 @@
     </div>
 </footer>
 
-<script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="${ctx}/static/bootstrap-3.3.5/js/header.js"></script>
-<script src="${ctx}/static/bootstrap-3.3.5/js/common.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/story-list-manage.js"></script>
-<script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
-<script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/header.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/common.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/story-list-manage.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
 </body>
 </html>

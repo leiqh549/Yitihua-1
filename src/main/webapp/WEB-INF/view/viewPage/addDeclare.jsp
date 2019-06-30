@@ -9,28 +9,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/login.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/font-awesome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/font-awesome.css"/>
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/reset.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/common.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/core.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/story-add-manage.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/header.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/reset.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/common.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/core.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/story-add-manage.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/header.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 
 <div class="row">
     <div class="col-sm-12">
-        <nav class="navbar navbar-default navbar-static-top admin-nav J_admin_nav">
+        <nav class="navbar navbar-default navbar-staticResources-top admin-nav J_admin_nav">
             <a class="left-toggle pull-left" href="javascript:;">
                 <i class="fa fa-bars fa-lg"></i>
             </a>
@@ -49,7 +49,7 @@
 <!-- 侧边栏 -->
 <ul class="nav nav-pills nav-stacked sidebar pull-left">
     <li id="firstMenu0" class="active">
-        <a class="J_firstMenu" href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
+        <a class="J_firstMenu" href="/jump/index"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
     </li>
     <li id="firstMenu1" class="active">
         <a class="J_firstMenu" href="javascript:;"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>人员管理</span><i class="fa fa-angle-right angle-right"></i></a>
@@ -81,10 +81,10 @@
                 <div class="col-sm-12">
                     <ol class="breadcrumb">
                         <li>
-                            <a href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;首页</a>
+                            <a href="/jump/index"><i class="fa fa-home"></i>&nbsp;首页</a>
                         </li>
                         <li>
-                            <a href="../../pc-admin/story-manage/story-list-manage.html">公告管理</a>
+                            <%--<a href="../../pc-admin/story-manage/story-list-manage.html">公告管理</a>--%>
                         </li>
                         <li class="active">新增公告</li>
                     </ol>
@@ -97,25 +97,21 @@
                         </div>
                         <div class="panel-body">
                             <div class="form-group col-sm-12">
-                                <a href="story-list-manage.html" class="btn btn-success btn-radius-no J_search margin-left-15 pull-right" type="button"><i class="fa fa-reply"></i>&nbsp;返回</a>
+                                <a href="/jump/jumpallDeclareList" class="btn btn-success btn-radius-no J_search margin-left-15 pull-right" type="button"><i class="fa fa-reply"></i>&nbsp;返回</a>
                             </div>
+
+                            <%--添加表单--%>
+                            <form action="/declare/addDeclare">
+
                             <div class="form-group col-sm-8">
                                 <div class="col-sm-5">
                                     <label class="control-label pull-right">公告标题</label>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input class="form-control title w200" type="text" name="name">
+                                    <input class="form-control title w200" type="text" name="title">
                                 </div>
                             </div>
 
-                            <div class="form-group col-sm-8">
-                                <div class="col-sm-5">
-                                    <label class="control-label pull-right">公告图片上传</label>
-                                </div>
-                                <div class="col-sm-7">
-                                    <input id="fileToUpload" type="file" name="file" class="file"> <!-- 上传文件 -->
-                                </div>
-                            </div>
                             <div class="form-group col-sm-8">
                                 <div class="col-sm-5">
                                     <!-- <label class="control-label pull-right">图片上传</label> -->
@@ -131,7 +127,7 @@
                                 </div>
                                 <div class="col-sm-7">
                                     <div class="form-group">
-                                        <textarea name="work_content" class="content p-textarea" id="J_workContentId" cols="100" rows="20"></textarea>
+                                        <textarea name="content" class="content p-textarea" id="J_workContentId" cols="100" rows="20" ></textarea>
                                     </div>
                                     <!--  <textarea name="work_content" class="content" id="J_workContentId" cols="100" rows="50"></textarea> -->
                                 </div>
@@ -142,11 +138,10 @@
                                 </div>
                                 <div class="col-sm-5">
                                     <!-- <textarea name="work_content" class="J_workContent" id="J_workContentId" cols="100" rows="50"></textarea> -->
-                                    <a href="javascript:;" id="login" class="btn btn-success margin-left-15 btn-radius-no login"><i class="fa fa-plus"></i>&nbsp;发布公告</a>
-
+                                    <input type="submit"  class="btn btn-success margin-left-15 btn-radius-no login"  value="发布公告"/>
                                 </div>
+                                </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -163,11 +158,11 @@
         </div>
     </footer>
 
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/header.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/common.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/story-add-manage.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/header.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/common.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/story-add-manage.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
+    <script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
 </body>
 </html>

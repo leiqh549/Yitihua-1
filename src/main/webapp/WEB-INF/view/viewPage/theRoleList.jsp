@@ -9,27 +9,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>首页</title>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/login.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/font-awesome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/login.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/font-awesome.css"/>
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/reset.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/common.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/core.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/header.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="${ctx}/static/bootstrap-3.3.5/css/welcome.css"/>
-    <script src="${ctx}/static/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/reset.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/common.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/core.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/header.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${ctx}/staticResources/bootstrap-3.3.5/css/welcome.css"/>
+    <script src="${ctx}/staticResources/jquery/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 
 <div class="row">
     <div class="col-sm-12">
-        <nav class="navbar navbar-default navbar-static-top admin-nav J_admin_nav">
+        <nav class="navbar navbar-default navbar-staticResources-top admin-nav J_admin_nav">
             <a class="left-toggle pull-left" href="javascript:;">
                 <i class="fa fa-bars fa-lg"></i>
             </a>
@@ -48,7 +48,7 @@
 <!-- 侧边栏 -->
 <ul class="nav nav-pills nav-stacked sidebar pull-left">
     <li id="firstMenu0" class="active">
-        <a class="J_firstMenu" href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
+        <a class="J_firstMenu" href="/jump/index"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>首页</span></a>
     </li>
     <li id="firstMenu1" class="active">
         <a class="J_firstMenu" href="javascript:;"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>人员管理</span><i class="fa fa-angle-right angle-right"></i></a>
@@ -80,32 +80,29 @@
                 <div class="col-sm-12">
                     <ol class="breadcrumb">
                         <li>
-                            <a href="/html/pc-admin/common/welcome.html"><i class="fa fa-home"></i>&nbsp;首页</a>
+                            <a href="/jump/index"><i class="fa fa-home"></i>&nbsp;首页</a>
                         </li>
-                        <li class="active">阿姨信息管理列表</li>
+
+                        <li class="active">角色管理信息列表</li>
                     </ol>
-                    <input type="hidden" class="pageDataCount" value="10">
                 </div>
                 <div class="col-sm-12 margin-top--10">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h4>阿姨信息管理列表</h4>
+                            <h4>角色管理信息列表</h4>
                         </div>
                         <div class="panel-body">
                             <form class="form-horizontal J_searchForm">
                                 <div class="form-group">
-                                    <label class="padding-left-30 control-label">阿姨名</label>
+                                    <label class="padding-left-30 control-label">角色名</label>
                                     <div class="col-sm-2">
-                                        <input class="form-control J_username" name="username"></input>
+                                        <input class="form-control J_name " name="student_name"></input>
                                     </div>
-
-
+                                    <div class="col-sm-2 margin-bottom-10 margin-top--10 pull-left">
+                                        <a class="btn btn-success btn-radius-no J_search margin-left-15" type="button" href="#"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                                    </div>
                                 </div>
-                                <div class="col-sm-12 margin-bottom-10 margin-top--10 pull-right">
-                                    <a class="btn btn-success btn-radius-no J_search margin-left-15 pull-right" type="button"><i class="fa fa-search"></i>&nbsp;搜索</a>
-                                    <a href="\html\pc-admin\admin-information-management\admin-information-add.html" class="btn btn-success margin-left-15 btn-radius-no J_addInfo pull-right"><i class="fa fa-plus"></i>&nbsp;新增</a>
-                                    <!-- <a href="#" target="_blank" class="btn btn-success margin-left-15 btn-radius-no J_allDown pull-right"><i class="fa fa-level-up"></i>&nbsp;全部导出</a> -->
-                                </div>
+
                             </form>
                             <div class="table-responsive col-sm-12">
                                 <table class="J_table table table-hover table-bordered">
@@ -113,21 +110,36 @@
                                     <tr data-id="1">
                                         <!-- <th class="slectAll"><input type="checkbox" class="J_allChk"/></th> -->
                                         <th>序号</th>
-                                        <th>阿姨名</th>
-                                        <th>密码</th>
+                                        <th>用户名</th>
+                                        <th>角色名</th>
+                                        <!--   <th>用户名</th> -->
+                                        <!-- <th>家长</th> -->
 
+                                        <!-- <th>是否为VIP</th> -->
                                         <th>操作</th>
+
+                                        <c:forEach var="role" items="${roleList}">
+                                    <tbody id="J_template">
+                                    <tr>
+                                        <td>${role.id}</td>
+                                        <td>${role.name}</td>
+                                        <td>
+                                            <!-- <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;编辑</a> -->
+                                            <a href="#" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;点击查看详情</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    </c:forEach>
+
                                     </tr>
                                     </thead>
                                     <tbody id="J_template">
                                     <tr>
                                         <td>1</td>
-                                        <td>张三</td>
-                                        <td>123456</td>
+                                        <td>管理员</td>
                                         <td>
-                                            <!-- <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;编辑</a> -->
-                                            <a href="/html/pc-admin/student-information-management/student-information-detail.html#?id='1'" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;设置权限(限超级管理员）</a>
-                                            <a href="#'+ item.id +'" class="label-info J_allTeaDel" data-id="'+ item.id +'" data-toggle="modal" data-target="#J_DEl"  data-article_name="'+ item.article_name +'"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                            <a href="#" class="label-info J_modify"><i class="fa fa-pencil"></i>&nbsp;新增</a>
+                                            <a href="#"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
                                         </td>
                                     </tr>
 
@@ -163,20 +175,20 @@
     </div>
 </div>
 
-    <footer role="contentinfo">
-        <div class="clearfix footer">
-            <ul class="list-unstyled list-inline pull-left">
-                <li>pandawork © 2018</li>
-            </ul>
-            <button class="pull-right btn btn-inverse-alt btn-xs hidden-print" id="back-to-top"><i class="fa fa-arrow-up"></i></button>
-        </div>
-    </footer>
+<footer role="contentinfo">
+    <div class="clearfix footer">
+        <ul class="list-unstyled list-inline pull-left">
+            <li>pandawork © 2018</li>
+        </ul>
+        <button class="pull-right btn btn-inverse-alt btn-xs hidden-print" id="back-to-top"><i class="fa fa-arrow-up"></i></button>
+    </div>
+</footer>
 
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/header.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/common.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/admin-information-list.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
-    <script src="${ctx}/static/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/header.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/common.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/student-information-list.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap-paginator.js"></script>
+<script src="${ctx}/staticResources/bootstrap-3.3.5/js/bootstrap.dialog.js"></script>
 </body>
 </html>
